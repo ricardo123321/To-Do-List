@@ -1,7 +1,7 @@
-if (localStorage.getItem('projectList') === '' || localStorage.getItem('projectList') === null) {
-  const projectList = [];
-  localStorage.setItem('projectList', projectList);
+if (localStorage.getItem('projectList') === "" || localStorage.getItem('projectList') === null) {
+  localStorage.setItem('projectList', '[]');
 }
+
 
 const Project = function(name){
     this.name = name;
@@ -68,9 +68,34 @@ submitBtnErz.addEventListener('click', () => {
   deleteP(projectT)
 });
 
+createP('Default');
+
 const projectList = JSON.parse((localStorage.getItem('projectList')))
-if(projectList.find(obj => {
-  return obj.name === 'Default'
-}) === undefined){
-  createP('Default')
-}
+
+const showProjects = document.getElementById('myProjects');
+showProjects.addEventListener('click', () => {
+  const fragment = document.createDocumentFragment();
+  Object.values(projectList).forEach(projectElement => {
+    const projectContainer = document.createElement('div');
+    projectContainer.className = 'projectContainer';
+    Object.values(projectElement).forEach(element => {
+      const todoDiv = document.createElement('div');
+      const projectN = document.createElement('p');
+      projectN.textContent = element.projectN.value;
+      const description = document.createElement('p');
+      description.textContent = element.description.value;
+      const dueDate = document.createElement('p');
+      dueDate.textContent = element.dueDate.value;
+      const priority = document.createElement('p');
+      priority.textContent = element.priority.value;
+      todoDiv.appendChild(projectN);
+      todoDiv.appendChild(description);
+      todoDiv.appendChild(dueDate);
+      todoDiv.appendChild(priority);
+      projectContainer.appendChild(todoDiv);
+      fragment.appendChild(projectContainer);
+    });
+  });
+  const pageContent = document.getElementById('pageContent');
+  pageContent.appendChild(fragment);
+});

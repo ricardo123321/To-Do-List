@@ -3,10 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./main.js"></script>
-  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <title>Todolist</title>
 </head>
 <body>
   
+<div class="content">
+  <form>
+    <label for="projectN">Project name</label><br>
+    <input type="text" name="projectN" id="projectN"><br>
+    <label for="name">To do title</label><br>
+    <input type="text" name="name" id="name"><br>
+    <label for="description">To do description</label><br>
+    <input type="text" name="description" id="description"><br>
+    <label for="dueDate">To do date</label><br>
+    <input type="date" name="dueDate" id="dueDate"><br>
+    <label for="priority">To do priority</label><br>
+    <input type="number" name="priority" id="priority"><br>
+    <button id="submitToDo">Submit</button>
+  </form>
+</div>
+<script src="./main.js"></script>
 </body>
 </html>

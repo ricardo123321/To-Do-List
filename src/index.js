@@ -75,23 +75,37 @@ const projectList = JSON.parse((localStorage.getItem('projectList')))
 const showProjects = document.getElementById('myProjects');
 showProjects.addEventListener('click', () => {
   const fragment = document.createDocumentFragment();
-  Object.values(projectList).forEach(projectElement => {
+  projectList.forEach(projectElement => {
+    console.log(projectElement)
     const projectContainer = document.createElement('div');
-    projectContainer.className = 'projectContainer';
-    Object.values(projectElement).forEach(element => {
+    const projectTitle = document.createElement('h1');
+    projectTitle.textContent = projectElement.name
+    projectContainer.appendChild(projectTitle)
+    projectContainer.setAttribute('class', 'row to-movet')
+    projectElement.todoItems.forEach(element => {
       const todoDiv = document.createElement('div');
-      const projectN = document.createElement('p');
-      projectN.textContent = element.projectN.value;
+      todoDiv.setAttribute('class', 'col-md-4')
+      const projectN = document.createElement('h2');
+      projectN.setAttribute('class', 'font-weight-bold')
+      projectN.textContent = element.name;
       const description = document.createElement('p');
-      description.textContent = element.description.value;
+      description.textContent = element.description;
       const dueDate = document.createElement('p');
       dueDate.textContent = element.dueDate.value;
       const priority = document.createElement('p');
-      priority.textContent = element.priority.value;
+      priority.textContent = element.priority;
+      const btnErase = document.createElement('button')
+      btnErase.textContent = 'erase'
+      btnErase.addEventListener('click', () => {
+        projectElement.todoItems.splice(element, 1)
+        projectContainer.removeChild(todoDiv)
+        localStorage.setItem('projectList', JSON.stringify(projectList));
+      })
       todoDiv.appendChild(projectN);
       todoDiv.appendChild(description);
       todoDiv.appendChild(dueDate);
       todoDiv.appendChild(priority);
+      todoDiv.appendChild(btnErase);
       projectContainer.appendChild(todoDiv);
       fragment.appendChild(projectContainer);
     });

@@ -16,17 +16,17 @@
         </div>         
         <div class="collapse navbar-collapse"> 
             <ul class="nav navbar-nav navbar-right"> 
-                <li id="home">
-                    <a>HOME</a>
+                <li>
+                    <a id="myProjects" class="">MY PROJECTS</a>
                 </li>                 
                 <li>
-                    <a href="#about" class="">ABOUT</a>
+                    <a id="createP">CREATE PROJECT</a>
                 </li>                 
                 <li>
-                    <a id="myProjects" class="">My projects</a>
+                    <a id="createTD" class="">CREATE TO DO</a>
                 </li>                 
                 <li>
-                    <a href="#contact" class="">CONTACT</a>
+                    <a id="deleteP" class="">DELETE PROJECTS</a>
                 </li>                 
             </ul>             
         </div>         
@@ -34,7 +34,7 @@
 </div>
   
 <div class="content text-center" id="pageContent">
-  <form>
+  <form id="todoForm" class="invisible">
     <label for="projectN">Project name</label><br>
     <select name="projectN" id="projectN">
     </select>
@@ -50,13 +50,13 @@
     <button id="submitToDo">Submit</button>
   </form>
 
-  <form>
+  <form id="projectForm" class="invisible">
     <label for="projectT">Project name</label><br>
     <input type="text" name="projectT" id="projectT"><br>
     <button id="submitToP">Submit</button>
   </form>
 
-  <form>
+  <form id="projectDeleteForm" class="invisible">
     <label for="projectErz">Project to erase</label><br>
     <input type="text" name="projectErz" id="projectErz"><br>
     <button id="submitToErz">erase</button>

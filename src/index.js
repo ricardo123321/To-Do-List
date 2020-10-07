@@ -1,4 +1,4 @@
-import {doma, selectobj} from './dom';
+import { doma, selectobj, toggleMenus} from './dom';
 
 if (localStorage.getItem('projectList') === "" || localStorage.getItem('projectList') === null) {
   localStorage.setItem('projectList', '[]');
@@ -68,6 +68,32 @@ submitBtnP.addEventListener('click', () => {
 submitBtnErz.addEventListener('click', () => {
   const projectT = document.getElementById('projectT').value;
   deleteP(projectT)
+});
+
+const toggleDoma  = document.getElementById('allProjects');
+const toggleCreateTD = document.getElementById('todoForm');
+const toggleCreateP = document.getElementById('projectForm');
+const toggleDeleteP = document.getElementById('projectDeleteForm');
+
+const showMyProjects = document.getElementById('myProjects');
+const showCreateP = document.getElementById('createP');
+const showCreateTD = document.getElementById('createTD');
+const showDeleteP = document.getElementById('deleteP');
+
+showMyProjects.addEventListener('click', () => {
+  toggleMenus(toggleDoma, toggleCreateTD, toggleCreateP, toggleDeleteP);
+});
+
+showCreateP.addEventListener('click', () => {
+  toggleMenus(toggleCreateP, toggleDoma, toggleCreateTD, toggleDeleteP);
+});
+
+showCreateTD.addEventListener('click', () => {
+  toggleMenus(toggleCreateTD, toggleCreateP, toggleDoma, toggleDeleteP);
+});
+
+showDeleteP.addEventListener('click', () => {
+  toggleMenus(toggleDeleteP, toggleCreateTD, toggleCreateP, toggleDoma);
 });
 
 createP('Default');

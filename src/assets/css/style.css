@@ -9,3 +9,11 @@
 .to-movet{
   margin-top: 20px;
 }
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}

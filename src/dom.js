@@ -10,14 +10,23 @@ const selectobj = () => {
   })
 }
 
+const toggleMenus = (active, hide1, hide2, hide3) => {
+    active.classList.remove('invisible');
+    active.classList.add('visible');
+    hide1.classList.remove('visible');
+    hide1.classList.add('invisible');
+    hide2.classList.remove('visible');
+    hide2.classList.add('invisible');
+    hide3.classList.remove('visible');
+    hide3.classList.add('invisible');
+}
+
 const doma = () => {
-    const showProjects = document.getElementById('myProjects');
     const projectList = JSON.parse((localStorage.getItem('projectList')));
     let addShowProject = true;
-    showProjects.addEventListener('click', () => {
     if(addShowProject === true) {
         const fragment = document.createDocumentFragment();
-    projectList.forEach(projectElement => {
+        projectList.forEach(projectElement => {
         const projectContainer = document.createElement('div');
         const projectTitle = document.createElement('h1');
         projectTitle.textContent = projectElement.name
@@ -122,12 +131,15 @@ const doma = () => {
         fragment.appendChild(projectContainer);
         });
     });
+    const allProjects = document.createElement('div');
+    allProjects.id = 'allProjects';
+    allProjects.setAttribute('class', 'visible');
+    allProjects.appendChild(fragment);
     const pageContent = document.getElementById('pageContent');
-    pageContent.appendChild(fragment);
+    pageContent.appendChild(allProjects);
     addShowProject = false;
     };
-  });
 };
 
 
-export {doma, selectobj}
+export { doma, selectobj, toggleMenus }

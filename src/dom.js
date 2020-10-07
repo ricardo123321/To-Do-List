@@ -1,24 +1,22 @@
 const selectobj = () => {
   const projectList = JSON.parse((localStorage.getItem('projectList')));
   const select = document.getElementById('projectN')
+  const select2 = document.getElementById('projectErz')
   projectList.forEach(projectElement => {
     const namep = projectElement.name
     const options = document.createElement('option')
     options.textContent = projectElement.name
     options.setAttribute('value', projectElement.name)
     select.appendChild(options)
+    select2.appendChild(options)
   })
 }
 
 const toggleMenus = (active, hide1, hide2, hide3) => {
-    active.classList.remove('invisible');
-    active.classList.add('visible');
-    hide1.classList.remove('visible');
-    hide1.classList.add('invisible');
-    hide2.classList.remove('visible');
-    hide2.classList.add('invisible');
-    hide3.classList.remove('visible');
-    hide3.classList.add('invisible');
+  active.setAttribute('class', 'visible')
+  hide1.setAttribute('class', 'invisible')
+  hide2.setAttribute('class', 'invisible')
+  hide3.setAttribute('class', 'invisible')
 }
 
 const doma = () => {

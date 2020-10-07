@@ -7,8 +7,11 @@ const selectobj = () => {
     const options = document.createElement('option')
     options.textContent = projectElement.name
     options.setAttribute('value', projectElement.name)
+    const options2 = document.createElement('option')
+    options2.textContent = projectElement.name
+    options2.setAttribute('value', projectElement.name)
+    select2.appendChild(options2)
     select.appendChild(options)
-    select2.appendChild(options)
   })
 }
 
@@ -43,7 +46,7 @@ const doma = () => {
         const priority = document.createElement('p');
         priority.textContent = element.priority;
         const btnErase = document.createElement('button')
-        btnErase.textContent = 'erase'
+        btnErase.textContent = 'Erase'
         btnErase.addEventListener('click', () => {
             projectElement.todoItems.splice(element, 1)
             projectContainer.removeChild(todoDiv)

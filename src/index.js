@@ -1,4 +1,4 @@
-import doma from './dom';
+import {doma, selectobj} from './dom';
 
 if (localStorage.getItem('projectList') === "" || localStorage.getItem('projectList') === null) {
   localStorage.setItem('projectList', '[]');
@@ -73,3 +73,4 @@ submitBtnErz.addEventListener('click', () => {
 createP('Default');
 
 doma();
+selectobj()

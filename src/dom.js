@@ -1,3 +1,15 @@
+const selectobj = () => {
+  const projectList = JSON.parse((localStorage.getItem('projectList')));
+  const select = document.getElementById('projectN')
+  projectList.forEach(projectElement => {
+    const namep = projectElement.name
+    const options = document.createElement('option')
+    options.textContent = projectElement.name
+    options.setAttribute('value', projectElement.name)
+    select.appendChild(options)
+  })
+}
+
 const doma = () => {
     const showProjects = document.getElementById('myProjects');
     const projectList = JSON.parse((localStorage.getItem('projectList')));
@@ -6,7 +18,6 @@ const doma = () => {
     if(addShowProject === true) {
         const fragment = document.createDocumentFragment();
     projectList.forEach(projectElement => {
-        console.log(projectElement)
         const projectContainer = document.createElement('div');
         const projectTitle = document.createElement('h1');
         projectTitle.textContent = projectElement.name
@@ -119,4 +130,4 @@ const doma = () => {
 };
 
 
-export default doma;
+export {doma, selectobj}

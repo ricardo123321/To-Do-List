@@ -4,19 +4,20 @@ if (localStorage.getItem('projectList') === '' || localStorage.getItem('projectL
   localStorage.setItem('projectList', '[]');
 }
 
+class NewProject {
+  Project(name) {
+    this.name = name;
+    this.todoItems = [];
+  }
 
-const NewProject = (name) => {
-  this.name = name;
-  this.todoItems = [];
-};
-
-const TodoIs = (name, projectN, description, dueDate, priority) => {
-  this.name = name;
-  this.projectN = projectN;
-  this.description = description;
-  this.dueDate = dueDate;
-  this.priority = priority;
-};
+  TodoIs(name, projectN, description, dueDate, priority) {
+    this.name = name;
+    this.projectN = projectN;
+    this.description = description;
+    this.dueDate = dueDate;
+    this.priority = priority;
+  }
+}
 
 const submitBtn = document.getElementById('submitToDo');
 const submitBtnP = document.getElementById('submitToP');
@@ -30,17 +31,28 @@ submitBtn.addEventListener('click', () => {
   const dueDate = document.getElementById('dueDate').value;
   const priority = document.getElementById('priority').value;
   const projectE = projectList.find(obj => obj.name === projectN);
-  const toDo = new TodoIs(name, projectN, description, dueDate, priority);
+  const toDo = new Project(name, projectN, description, dueDate, priority);
   projectE.todoItems.push(toDo);
   localStorage.setItem('projectList', JSON.stringify(projectList));
 });
+
+const createTDL = (name, projectN, description, dueDate, priority) => {
+  const projectList = JSON.parse((localStorage.getItem('projectList')));
+  const projectE = projectList.find(obj => obj.name === projectN);
+  if (projectE.todoItems.length > 0 && name === 'example') {
+    return;
+  }
+  const toDo = new TodoIs(name, projectN, description, dueDate, priority);
+  projectE.todoItems.push(toDo);
+  localStorage.setItem('projectList', JSON.stringify(projectList));
+};
 
 const createP = (name) => {
   const projectList = JSON.parse((localStorage.getItem('projectList')));
   if (projectList.length > 0 && name === 'Default') {
     return;
   }
-  const nProject = new NewProject(name);
+  const nProject = new Project(name);
   projectList.push(nProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
 };
@@ -64,6 +76,11 @@ submitBtnErz.addEventListener('click', () => {
   const projectT = document.getElementById('projectT').value;
   deleteP(projectT);
 });
+
+createP('Default');
+createTDL('example', 'Default', 'this is a description', '10/10/1990', 90);
+doma();
+selectobj();
 
 const toggleDoma = document.getElementById('allProjects');
 const toggleCreateTD = document.getElementById('todoForm');
@@ -90,7 +107,3 @@ showDeleteP.addEventListener('click', () => {
 showMyProjects.addEventListener('click', () => {
   toggleMenus(toggleDoma, toggleCreateTD, toggleCreateP, toggleDeleteP);
 });
-
-createP('Default');
-doma();
-selectobj();

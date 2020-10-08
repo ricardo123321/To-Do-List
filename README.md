@@ -44,6 +44,12 @@ npm run build
 
 - Github: [@ricardo123321](https://github.com/ricardo123321)
 
+👤 **Johann Rodriguez**
+
+- Github: [@JohannRodriguez](https://github.com/JohannRodriguez)
+- Twitter: [@BSapce](https://https://twitter.com/BSapce)
+- Linkedin: [Johann Rodríguez](https://www.linkedin.com/in/johann-alonso-rodr%C3%ADguez-v%C3%A1zquez-25b07719a/)
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!

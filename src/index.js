@@ -65,10 +65,6 @@ submitBtnErz.addEventListener('click', () => {
   deleteP(projectT);
 });
 
-createP('Default');
-doma();
-selectobj();
-
 const toggleDoma = document.getElementById('allProjects');
 const toggleCreateTD = document.getElementById('todoForm');
 const toggleCreateP = document.getElementById('projectForm');
@@ -94,3 +90,7 @@ showDeleteP.addEventListener('click', () => {
 showMyProjects.addEventListener('click', () => {
   toggleMenus(toggleDoma, toggleCreateTD, toggleCreateP, toggleDeleteP);
 });
+
+createP('Default');
+doma();
+selectobj();

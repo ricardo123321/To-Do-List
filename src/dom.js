@@ -35,7 +35,7 @@ const doma = () => {
       projectContainer.setAttribute('class', 'row to-movet');
       projectElement.todoItems.forEach(element => {
         const todoDiv = document.createElement('div');
-        todoDiv.setAttribute('class', 'col-md-4');
+        todoDiv.setAttribute('class', 'todoDiv col-md-4');
         const projectN = document.createElement('h2');
         projectN.setAttribute('class', 'font-weight-bold');
         projectN.textContent = element.name;

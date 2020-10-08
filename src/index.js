@@ -5,14 +5,17 @@ if (localStorage.getItem('projectList') === '' || localStorage.getItem('projectL
 }
 
 
-function Project(name) {
+const newProject = (name) => {
   this.name = name;
   this.todoItems = [];
 }
 
-function TodoIs(name, projectN, description, dueDate, priority) {
+const TodoIs = (name, projectN, description, dueDate, priority) => {
   this.name = name;
   this.projectN = projectN;
+  this.description = description;
+  this.dueDate = dueDate;
+  this.priority = priority;
 }
 
 const submitBtn = document.getElementById('submitToDo');
@@ -37,7 +40,7 @@ const createP = (name) => {
   if (projectList.length > 0 && name === 'Default') {
     return;
   }
-  const nProject = new Project(name);
+  const nProject = new newProject(name);
   projectList.push(nProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
 };
@@ -63,7 +66,6 @@ submitBtnErz.addEventListener('click', () => {
 });
 
 createP('Default');
-
 doma();
 selectobj();
 

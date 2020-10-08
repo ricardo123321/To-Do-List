@@ -5,10 +5,10 @@ if (localStorage.getItem('projectList') === '' || localStorage.getItem('projectL
 }
 
 
-const newProject = (name) => {
+const NewProject = (name) => {
   this.name = name;
   this.todoItems = [];
-}
+};
 
 const TodoIs = (name, projectN, description, dueDate, priority) => {
   this.name = name;
@@ -16,7 +16,7 @@ const TodoIs = (name, projectN, description, dueDate, priority) => {
   this.description = description;
   this.dueDate = dueDate;
   this.priority = priority;
-}
+};
 
 const submitBtn = document.getElementById('submitToDo');
 const submitBtnP = document.getElementById('submitToP');
@@ -40,7 +40,7 @@ const createP = (name) => {
   if (projectList.length > 0 && name === 'Default') {
     return;
   }
-  const nProject = new newProject(name);
+  const nProject = new NewProject(name);
   projectList.push(nProject);
   localStorage.setItem('projectList', JSON.stringify(projectList));
 };

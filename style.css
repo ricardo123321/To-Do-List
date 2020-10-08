@@ -1,0 +1,46 @@
+.content {
+  margin-top: 90px;
+}
+
+#submitToDo {
+  margin-top: 15px;
+}
+
+.content .to-movet,
+.visible {
+  margin: 20px 15px;
+  background-color: rgb(241, 240, 240);
+  padding: 0 20px 20px;
+  border-radius: 5px;
+  border: 2px solid rgb(211, 211, 211);
+}
+
+.visible {
+  display: block;
+}
+
+.invisible {
+  display: none;
+}
+
+#projectErz {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  cursor: pointer;
+}
+
+button {
+  background-color: rgb(189, 187, 187);
+  color: white !important;
+  font-weight: bold;
+  border-radius: 2px;
+  margin: 5px 10px !important;
+  padding: 5px 10px;
+}
+
+.input {
+  border-radius: 3px;
+}

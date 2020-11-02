@@ -1,0 +1,68 @@
+.content {
+  margin-top: 90px;
+}
+
+#submitToDo {
+  margin-top: 15px;
+}
+
+.todoDiv {
+  border-top: 2px solid  rgb(211, 211, 211);
+  border-bottom: 2px solid  rgb(211, 211, 211);
+  padding: 10px 0 20px;
+}
+
+.to-movet h1 {
+  border-bottom: 3px solid  rgb(211, 211, 211);
+  width: fit-content;
+  margin: 20px auto;
+  padding-bottom: 5px;
+}
+
+.visible {
+  display: block;
+  margin: 20px 15px;
+  background-color: rgb(241, 240, 240);
+  padding: 20px 20px;
+  border-radius: 5px;
+  border: 2px solid rgb(211, 211, 211);
+}
+
+.invisible {
+  display: none;
+}
+
+#projectErz {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  cursor: pointer;
+}
+
+button {
+  background-color: rgb(189, 187, 187);
+  color: white !important;
+  font-weight: bold !important;
+  border-radius: 20px;
+  margin: 10px !important;
+  padding: 5px 10px;
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(153, 152, 152);
+}
+
+input {
+  border-radius: 20px;
+  border: 1px solid rgb(211, 211, 211);
+  padding: 5px 10px;
+}
+
+select {
+  border-radius: 15px;
+  padding: 5px 10px;
+  background-color: white;
+}
